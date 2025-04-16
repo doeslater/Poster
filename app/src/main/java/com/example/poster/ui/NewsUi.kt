@@ -190,18 +190,21 @@ fun MainPopup(
     var iconImageVector = Icons.Filled.Spa
     var popupTitle = ""
     var popupText = ""
+    var popupButtonText = ""
 
     when (popupType) {
         PopupType.NO_INTERNET -> {
             iconImageVector = Icons.Filled.WifiOff
             popupTitle = "No Internet Connection"
             popupText = "Please check your Wi-Fi settings and try again."
+            popupButtonText = "Settings"
         }
 
         PopupType.NO_DATA -> {
             iconImageVector = Icons.Filled.ErrorOutline
             popupTitle = "No Data"
             popupText = "Please refresh the page and try again."
+            popupButtonText = "Refresh"
         }
     }
 
@@ -243,7 +246,7 @@ fun MainPopup(
             },
         ) {
             Text(
-                "Settings",
+                text = popupButtonText,
                 color = Color.White,
                 fontSize = 16.sp,
                 style = TextStyle(fontWeight = FontWeight.Bold),

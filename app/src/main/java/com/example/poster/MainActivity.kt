@@ -16,13 +16,9 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.WifiOff
-import androidx.compose.material3.Icon
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -108,11 +104,6 @@ class MainActivity : AppCompatActivity(), PixelCopyHelper.OnScreenshotCapturedLi
                     }
                 )
             } else if (status.value == ConnectivityObserver.Status.Unavailable) {
-                Icon(
-                    imageVector = Icons.Filled.WifiOff,
-                    contentDescription = "Favorite Icon",
-                    tint = Color.Black
-                )
                 MainPopup(
                     popupType = PopupType.NO_INTERNET,
                     onWifiSettings = {
@@ -161,9 +152,6 @@ class MainActivity : AppCompatActivity(), PixelCopyHelper.OnScreenshotCapturedLi
     }
 
     fun takeScreenshot(bitmap: Bitmap) {
-//        val pattern = "yyyy-MM-dd_hh:mm:ss"
-//        val simpleDateFormat = SimpleDateFormat(pattern, Locale.getDefault())
-
         try {
             val imagesDir = Environment.getExternalStoragePublicDirectory("Wallpaper")
             val file = File(imagesDir, "poster.png")
