@@ -7,9 +7,9 @@ A Quick An Dirty App For Creating Information Wallpapers.
 
 Eink eReader
 
-[News API](https://newsapi.org)
-[OpenWeather](https://openweathermap.org/)
+* [News API](https://newsapi.org)
+* [OpenWeather](https://openweathermap.org/)
 
 Thank you: 
 * sleeping.png was created using ai 
-* Connectivity code by Philipp Lackner @philipplackner  [Youtube](https://www.youtube.com/watch?v=TzV0oCRDNfM) [Github repo](https://github.com/philipplackner/ObserveConnectivity)
+* Connectivity code by Philipp Lackner || @philipplackner || [Youtube](https://www.youtube.com/watch?v=TzV0oCRDNfM) || [Github repo](https://github.com/philipplackner/ObserveConnectivity)
