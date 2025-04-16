@@ -12,4 +12,4 @@ Eink eReader
 
 Thank you: 
 * sleeping.png was created using ai 
-* Connectivity code by Philipp Lackner || @philipplackner || [Youtube](https://www.youtube.com/watch?v=TzV0oCRDNfM) || [Github repo](https://github.com/philipplackner/ObserveConnectivity)
+* Connectivity code by Philipp Lackner || [Youtube](https://www.youtube.com/watch?v=TzV0oCRDNfM) || [Github repo](https://github.com/philipplackner/ObserveConnectivity)
