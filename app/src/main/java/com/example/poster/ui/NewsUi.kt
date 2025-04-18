@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.poster.data.model.Article
 import com.example.poster.data.model.weather.WeatherResponse
+import com.example.poster.util.Constants.Companion.DISPLAY_HEADLINE_NEWS_ITEMS
 import kotlinx.coroutines.launch
 import java.time.Instant
 import java.time.ZoneId
@@ -124,7 +125,7 @@ fun WeatherSection(
 fun NewsSection(headlineNewsState: MutableState<ArrayList<Article>>) {
     Column(modifier = Modifier.padding(bottom = 12.dp)) {
         headlineNewsState.value.forEachIndexed { index, article ->
-            if (index < 3) {
+            if (index < DISPLAY_HEADLINE_NEWS_ITEMS) {
                 if (index == 0) {
                     article.source?.name?.let {
                         Text(

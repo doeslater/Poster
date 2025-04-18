@@ -8,6 +8,7 @@ import com.example.poster.data.model.forcast.ForecastResponse
 import com.example.poster.data.model.weather.WeatherResponse
 import com.example.poster.data.repository.NewsRepository
 import com.example.poster.data.repository.WeatherRepository
+import com.example.poster.util.Constants.Companion.WEATHER_LOCATION
 import kotlinx.coroutines.Dispatchers
 
 class MainViewModel() : ViewModel() {
@@ -23,13 +24,13 @@ class MainViewModel() : ViewModel() {
 
     fun getWeather(): LiveData<WeatherResponse?>{
         return liveData(Dispatchers.Default) {
-            emit(weatherRepository.getWeather("London"))
+            emit(weatherRepository.getWeather(WEATHER_LOCATION))
         }
     }
 
     fun getForecast(): LiveData<ForecastResponse?>{
         return liveData(Dispatchers.Default) {
-            emit(weatherRepository.getForecast("London"))
+            emit(weatherRepository.getForecast(WEATHER_LOCATION))
         }
     }
 
