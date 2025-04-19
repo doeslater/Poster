@@ -156,6 +156,16 @@ class MainActivity : AppCompatActivity(), PixelCopyHelper.OnScreenshotCapturedLi
             val imagesDir = Environment.getExternalStoragePublicDirectory("Wallpaper")
             val file = File(imagesDir, "poster.png")
 
+            if (!imagesDir.exists()) {
+                if (imagesDir.mkdir()) {
+                    Toast.makeText(this, "Directory created: ${imagesDir.absolutePath}", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Failed to create directory.", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Directory already exists.", Toast.LENGTH_SHORT).show()
+            }
+
             FileOutputStream(file).use {
                 bitmap.compress(Bitmap.CompressFormat.PNG, 90, it)
                 it.flush()
@@ -170,8 +180,10 @@ class MainActivity : AppCompatActivity(), PixelCopyHelper.OnScreenshotCapturedLi
             Toast.makeText(this, "Image saved successfully: ${file.path}", Toast.LENGTH_LONG).show()
 
         } catch (e: FileNotFoundException) {
+            Toast.makeText(this, "File not found: ${e.message}", Toast.LENGTH_SHORT).show()
             e.printStackTrace()
         } catch (e: IOException) {
+            Toast.makeText(this, "IO Exception: ${e.message}", Toast.LENGTH_SHORT).show()
             e.printStackTrace()
         }
     }
